@@ -12,9 +12,11 @@ export class UserResolveService implements Resolve<IUser> {
   constructor(private userService: UserService) {
   }
 
+
+  // @ts-ignore
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): IUser | Observable<IUser> | Promise<IUser> {
     const {id} = route.params;
     this.userService.getById(id);
-    throw new Error('Method not implemented.');
+
   }
 }
